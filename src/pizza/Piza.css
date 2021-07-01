@@ -1,0 +1,32 @@
+.piza{
+    margin: 0;
+    flex:10;
+    
+    height: calc(100vh - 50px);
+    color: white;
+    background-color:lightslategrey;
+
+}
+.piza-wrapper{
+    padding: 20px;
+   
+    
+    
+}
+.piza-size{
+   align-items: center;
+   display: flex;
+   
+   
+}
+.pizza-option{
+    width: 150px;
+        margin: 10px;
+        border-radius: 30px;
+        justify-content: center;
+}
+.pizza-option:focus{
+    outline: none;
+    min-width: 150px;
+        width: auto;
+}

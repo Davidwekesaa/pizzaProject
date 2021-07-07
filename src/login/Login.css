@@ -23,7 +23,16 @@
   }
   
   /* Set a style for all buttons */
-  .button {
+  .button8 {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  .button2 {
     background-color: #04AA6D;
     color: white;
     padding: 14px 20px;

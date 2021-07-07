@@ -1,12 +1,13 @@
 export const initialState = {
     basket: [],
-    user:null
+    user:"",
+    userid:""
         
     
 }
 
 const reducer = (state,action) =>{
-        // console.log(action.item.prize)
+         
     switch(action.type){
         case 'ADD_TO_BASKET':
             return{
@@ -33,6 +34,27 @@ const reducer = (state,action) =>{
                   ...state,
                   user:action.name
                 }
+
+                case 'Log_In_id':
+                return{
+                  ...state,
+                  userid:action.id
+                }
+
+                case 'Remove_items':
+                    const inde = state.basket.findIndex((basketIndex)=> basketIndex.id === action.id)
+                    let NewBaske = [...state.basket];
+                    if(inde >= 0){
+                        NewBaske.splice(inde,1)
+        
+                    }
+                    else{
+                        console.warn("the product is not in the basket")
+                    }
+                    return{
+                      ...state,
+                      basket: NewBaske,
+                    }
 
             default:
                 return state;

@@ -1,21 +1,54 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './Navbar.css'
 import download from './download.jpeg'
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import LocalPizzaIcon from '@material-ui/icons/LocalPizza';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import axios from 'axios'
 import {
     // BrowserRouter as Router,
     // Switch,
     // Route,
-    Link
+    Link,
+    
   } from "react-router-dom";
   import {useStateValue} from '../redux/StateProvider'
 
 
 
 function Navbar() {
-    const [{basket,user}]= useStateValue()
+    
+    const [{basket,user,userid},dispatch]= useStateValue()
+     const [baskk,setBaskk]=useState([])
+    //  useEffect(()=>{
+    //      const p = async() =>{
+            
+    //             await axios.get(`/basket/${userid}`).then((basj)=>{
+    //                 // console.log(basj)
+    //                 // console.log(userid)
+    //                 setBaskk(basj.data)
+    //             })
+                
+            
+           
+            
+    //      }
+    //      p()
+    //      console.log(`baskk -== ${baskk}`)
+    //  },[])
+
+    const logout = () =>{
+        dispatch({
+            type : 'Log_In',
+            name :""
+        })
+
+        dispatch({
+            type : 'Log_In_id',
+            id :""
+        })
+    }
     
     return <>
         <div className="Navbar">
@@ -79,6 +112,10 @@ function Navbar() {
                    <span className="basket-items">
                        {basket?.length}
                    </span>
+
+                
+                 <ExitToAppIcon className="basket" onClick={logout}/>
+                 
                  
                   
 

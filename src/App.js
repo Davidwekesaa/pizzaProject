@@ -3,6 +3,7 @@ import './App.css';
 import Home from './home/Home';
 import Navbar from './navbar/Navbar';
 import Login from './login/Login'
+import Register from './register/Register'
 import {
   BrowserRouter as Router,
   Switch,
@@ -29,13 +30,13 @@ function App() {
      
        
 <Route exact path="/">
-  {user? <Home/> :  <Login/>}
+  {user ==="" ?  <Login/>  : user === null ? <Register/>   : <Home/> }
   
 
  </Route>
   <Route path="/checkout">
+  {user ==="" ?  <Login/>  : user === null ? <Register/>   : <Checkout/> }
   
-  <Checkout/>
 
  </Route>
 
